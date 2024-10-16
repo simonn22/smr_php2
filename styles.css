@@ -4,6 +4,7 @@
 	}
 	h1{
 		font-size: 50px;
+        text-shadow: 0 0 5px darkgrey;
 	}
 	body{
 	font-family: "Poppins";
@@ -12,6 +13,7 @@
 	background-color: black;
 	}
     .container{
+        font-family: "Poppins";
         height: 100%;
         margin: 0;
         display: flex;
@@ -32,17 +34,30 @@
             box-shadow: 0 0 30px rgb(255, 255, 255);
     }
 	.formulario input,button{
+        font-family: "Poppins";
 		margin: 5px;
 		border-style: solid;
 		border-radius: 30px;
-		border-color: black;
+		border: 5px;
+        border-color: white;
 		padding: 15px;
+        padding-left: 30px;
+        padding-right: 30px;
 		text-align: center;
 		font-size: 20px;
-		background-color: lightblue;
+		background-color: black;
+        color: white;
+        width: auto;
 	}
+
+    .image{
+        border-radius: 20px;
+    }
 	.error{
-	color:white;
-	background-color: darkred;
+	color:darkred;
+    padding: 5px;
+    border-radius: 30px;
+    text-shadow: 0 0 5px lightcoral;
+    font-size: 20px;
 	}
 

@@ -55,15 +55,16 @@ if(!isset($_SESSION ['id_user'])){
 	echo '<form method="post" class="formulario">'
 	.'<input placeholder="Usuario" name="user" type "user">'
 	.'<input placeholder="Contraseña" name="passwd" type ="password">'
-	.'<div><button>Envía usuario y contraseña</button></div>'
-	.'</form>';
+	.'<div><button>Iniciar sesión</button></div>'
+	.'</form>'
+	.'<div><a href="register.php"><button>Registrarse</button></a></div>';
 
 
 
 }
 
 if(isset($_SESSION['id_user'])){
-	echo '<div><img src = "CHEMA.png" width=400>';
-	echo '<div><a href="?logout=1">Cerrar sesión</a></div>';
+	echo '<div><img class = "image" src = "CHEMA.png" width=400>';
+	echo '<div><a href="?logout=1"><button>Cerrar sesión</button></a></div>';
 
 }
