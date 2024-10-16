@@ -23,7 +23,7 @@ error_reporting(E_ALL);
 <body>
 <div class = 'container'>
 <div class = 'box'>
-<h1>Login</h1>
+<h1>Iniciar sesión</h1>
 	
 <?php
 
