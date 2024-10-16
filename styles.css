@@ -3,22 +3,42 @@
 		color:darkgreen;
 	}
 	h1{
-		
+		font-size: 50px;
 	}
 	body{
-	font-family: "Verdana";
-	color: aliceblue;
+	font-family: "Poppins";
+	color: Black;
 	text-align: center;
 	background-color: black;
 	}
+    .container{
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;     
+    }
+    
+    
+    
+    .box{
+       
+            border: 2px white;
+            border-radius: 50px;
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            box-shadow: 0 0 30px rgb(255, 255, 255);
+    }
 	.formulario input,button{
 		margin: 5px;
 		border-style: solid;
 		border-radius: 30px;
 		border-color: black;
-		padding: 10px;
+		padding: 15px;
 		text-align: center;
-		font-size: 16px;
+		font-size: 20px;
 		background-color: lightblue;
 	}
 	.error{
