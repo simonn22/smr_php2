@@ -10,36 +10,14 @@ error_reporting(E_ALL);
 ?>
 <!doctype html>
 <head>
-<style>
-	b{
-		color:darkgreen;
-	}
-	h1{
-		
-	}
-	body{
-	font-family: "Verdana";
-	color: aliceblue;
-	text-align: center;
-	background-color: black;
-	}
-	.formulario input,button{
-		margin: 5px;
-		border-style: solid;
-		border-radius: 30px;
-		border-color: black;
-		padding: 10px;
-		text-align: center;
-		font-size: 16px;
-		background-color: lightblue;
-	}
-	.error{
-	color:white;
-	background-color: darkred;
-	}
+/*stylesheet*/<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
 
-
-</style>
+/* FUENTES DE GOOGLE*/<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -51,10 +29,7 @@ if(!isset($_SESSION['id_user'])){
 
 	if (isset($_POST['passwd'])){
 		$conn = new mysqli('localhost','root','','smr');
-		if(0) echo "
-			SELECT id_usuario,passwd FROM usuarios
-			  WHERE usuario='".$_POST['user']."';
-		";
+
 		$r=$conn->query("
 			SELECT id_usuario,passwd FROM usuarios
 			  WHERE usuario='".$_POST['user']."'
@@ -70,14 +45,7 @@ if(!isset($_SESSION['id_user'])){
 		else echo '<div class="error">Usuario incorrecto</div>';
 	
 
-		/*
-		if( $_POST['passwd']=='enchegado' and $_POST['user']=='smr'){
-		$_SESSION['id_user']=1;
-	}
-	
-	else
-		echo '<div class="error">Usuario o contraseña incorrectos</div>';
-	*/
+
 }
 }	
 
