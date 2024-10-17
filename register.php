@@ -35,27 +35,32 @@ function redirectToIndex() {
 
 if(!isset($_SESSION['id_user'])){
 
-	if (isset($_POST['passwd'])){
+	if (isset($_POST['passwd']) and ($_POST['passwd']==$_POST['passwd2']) and !empty($_POST['passwd']) and !empty($_POST['passwd2'])){
 		$conn = new mysqli('localhost','root','','smr');
 		$r=$conn->query("
 			INSERT INTO usuarios (usuario, passwd) VALUES
-            ('".$_POST['user']."', '".$_POST['passwd']."');
+            ('".$_POST['user']."', '".md5($_POST['passwd'])."');
 		");
+	
 		if ($r) {
-            echo '<p class = registro_completo>Registro completo, se redirigirá al inicio de sesión.</p>';
-            echo '<script>redirectToIndex();</script>'; // Redirige después de mostrar el mensaje
+            echo '<p class = "registro_completo">Registro completo, se redirigirá al inicio de sesión.</p>';
+            echo '<script>redirectToIndex();</script>'; // Llama al cript de javascript para redirigir.
         } 
 		else {
-            echo '<p>Hubo un error en el registro. Inténtalo de nuevo.</p>';
-        }
+            echo '<p>Hubo un error en el registro. Las contraseñas tienen que coincidir. Inténtalo de nuevo.</p>';
+        }}
+		if (isset($_POST['passwd']) and ($_POST['passwd']!==$_POST['passwd2'])){
+            echo '<p class = "error">Hubo un error en el registro. Las contraseñas tienen que coincidir. Inténtalo de nuevo.</p>';
 }
+
 }	
 
 if(!isset($_SESSION ['id_user']) and !isset($r)){
 	echo '<h1>REGISTRARSE</h1>';
 	echo '<form method="post" class="formulario">'
 	.'<input placeholder="Usuario" name="user" type "user">'
-	.'<div><input placeholder="Contraseña" name="passwd" type ="password">'
+	.'<div><input placeholder="Contraseña" name="passwd" type ="password"></div>'
+	.'<div><input placeholder="Repetir contraseña" name="passwd2" type ="password"></div>'
 	.'<div class = "div_button">
 		<button>Registrarse</button>
 		

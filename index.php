@@ -39,7 +39,7 @@ if(!isset($_SESSION['id_user'])){
 		")->fetch_assoc();
 		//echo '----->'.$r['id_usuario'].'<-----';
 		if(isset($r['id_usuario'])){
-			if(isset($_POST['passwd']) and $_POST['passwd']==$r['passwd']){
+			if(isset($_POST['passwd']) and md5($_POST['passwd'])==$r['passwd']){
 				$_SESSION['id_user']=$r['id_usuario'];
 			}
 			else echo '<div class="error">Contraseña incorrecta</div>';
@@ -75,6 +75,6 @@ if(isset($_SESSION['id_user'])){
 	<div class = "container">
 	<?php
 	if(!isset($_SESSION['id_user'])){
-		echo '<div><a href="register.php"><button>Registrarse</button></a></div>';
+		echo '<div class = "div_button"><a href="register.php"><button>Registrarse</button></a></div>';
 	}
 	
