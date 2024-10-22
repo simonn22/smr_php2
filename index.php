@@ -42,12 +42,17 @@ if(!isset($_SESSION['id_user'])){
 			if(isset($_POST['passwd']) and md5($_POST['passwd'])==$r['passwd']){
 				$_SESSION['id_user']=$r['id_usuario'];
 			}
-			else echo '<div class="error">Contraseña incorrecta</div>';
+			else{
+				echo '<div class="error">Contraseña incorrecta</div>';
+				 $r=$conn->query(
+				"update usuarios set error_counter=error_counter +1 where usuario = '".$_POST['user']."';"
+				);
+			}
 		}
-		else echo '<div class="error">Usuario incorrecto</div>';
-	
+	else echo '<div class="error">Usuario inexistente</div>'
+		;
 }
-}	
+}
 
 if(!isset($_SESSION ['id_user'])){
 	

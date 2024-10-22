@@ -11,7 +11,7 @@ body{
 font-family: "Afacad Flux";
 color: aliceblue;
 text-align: center;
-background-color: black;
+background-color: black
 }
 .container{
     display:flex;
@@ -73,3 +73,36 @@ font-size: 30px;
     margin-top: 7.5%;
 }
 
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .box {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .formulario input {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .div_button {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    img.image {
+        width: 100%;
+        height: auto;
+    }
+}
